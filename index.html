@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RoomCraft 3D</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div>
+        <div class="logo">ROOMCRAFT <span>3D</span></div>
+        <div class="subtitle">Interactive Interior Designer</div>
+      </div>
+      <div class="top-actions">
+        <span id="level">LEVEL 1</span>
+        <span id="xp">XP 0/1000</span>
+        <button id="saveBtn">💾 Save</button>
+        <button id="loadBtn">↥ Load</button>
+        <button id="undoBtn">↶</button>
+        <button id="redoBtn">↷</button>
+      </div>
+    </header>
+
+    <aside class="left-panel">
+      <button class="tab active" data-panel="furniture">🛋 Furniture</button>
+      <button class="tab" data-panel="materials">🎨 Materials</button>
+      <button class="tab" data-panel="style">✨ Styles</button>
+      <button class="tab" data-panel="lighting">💡 Lighting</button>
+      <button class="tab" data-panel="challenge">🎯 Challenge</button>
+      <button class="tab" data-panel="room">🏠 Rooms</button>
+      <div id="catalog" class="catalog"></div>
+    </aside>
+
+    <main id="viewport">
+      <div id="loading">Loading RoomCraft 3D…</div>
+      <div id="toast"></div>
+      <div id="selectedInfo" class="selected-info hidden"></div>
+      <div id="scoreOverlay" class="overlay hidden"></div>
+    </main>
+
+    <aside class="right-panel">
+      <h3>DESIGN TOOLS</h3>
+      <button id="cleanBtn">🧹 Clean Room</button>
+      <button id="unboxBtn">📦 Unbox Item</button>
+      <button id="photoBtn">📸 Photo Mode</button>
+      <button id="beforeAfterBtn">↔ Before / After</button>
+      <button id="scoreBtn">⭐ Calculate Score</button>
+      <hr />
+      <label>Snap <input type="checkbox" id="snapToggle" checked></label>
+      <label>Shadows <input type="checkbox" id="shadowToggle" checked></label>
+      <label>Graphics <select id="quality">
+        <option>High</option><option>Medium</option><option>Low</option>
+      </select></label>
+      <hr />
+      <div id="objectTools">
+        <div class="muted">Select an object to edit it.</div>
+      </div>
+    </aside>
+
+    <footer class="toolbar">
+      <button id="moveMode">↔ Move</button>
+      <button id="rotateMode">↻ Rotate</button>
+      <button id="scaleMode">↕ Scale</button>
+      <button id="deleteMode">🗑 Delete</button>
+      <button id="duplicateMode">⧉ Duplicate</button>
+      <button id="resetBtn">⟲ New Design</button>
+      <span class="hint">Drag objects • R rotate • Delete remove • P photo mode • Ctrl+Z undo</span>
+    </footer>
+  </div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
